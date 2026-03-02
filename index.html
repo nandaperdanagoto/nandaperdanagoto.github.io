@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="pageTitle">Online Fraud Protection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        var translations = {
+            en: {
+                pageTitle: "Online Fraud Protection",
+                heroTitle: "Online Fraud Protection",
+                heroDesc: "Stay safe from phishing & online fraud, get the coverage you need for every tap and transfer",
+                planName: "Online fraud protection",
+                planPrice: "Rp200",
+                planBenefit: "Benefit up to 1 million rupiah for 5 days",
+                planNote: "Automatically applied. Charged per transfer.",
+                includedTitle: "Included in this insurance",
+                included1: "<span class=\"text-slate-900\">5 days</span> online fraud protection for all of your transfers",
+                included2: "Compensation for unauthorized fund transfer, online retail fraud, and/or identity theft up to <span class=\"text-slate-900\">Rp1.000.000</span>",
+                howToClaimTitle: "How to claim",
+                howToClaimIntro: "To claim this insurance, follow these steps using the reimbursement method:",
+                step1: "Prepare the required documents.",
+                step2: "Go to <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://polis.prodiginow.com/\" target=\"_blank\" rel=\"noopener noreferrer\">polis.prodiginow.com</a>, then register or log in using the phone number linked to your GoPay account.",
+                step3: "Choose the policy you wish to claim and click \"Claim\".",
+                step4: "Select the benefit you want to claim, and you will be redirected to fill a form.",
+                step5: "Provide all required information, including the chronology of events, your bank account details, proof of payment, and any other necessary documents. Then, upload the required photos or documents.",
+                step6: "Finish the process by submitting your claim.",
+                step6note: "You will get reimbursement in accordance with applicable terms & policies",
+                tncTitle: "Terms and conditions",
+                tnc1: "You may hold up to 5 (five) active digital fraud insurance policies at any given time.",
+                tnc2: "Policy certificate can be downloaded from <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://polis.prodiginow.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://polis.prodiginow.com/</a>, with your registered number on GoPay.",
+                tnc3: "Please provide relevant and appropriate documents requested by the insurer in relation to claim settlement.",
+                tnc4: "By enabling this insurance, you consent to GoPay sharing your personal data, including your name, phone number, and transfer references, with the Insurance Broker (Prodigi) solely for insurance registration, policy issuance, and claim processing purposes.",
+                underwrittenBy: "Underwritten by",
+                ojkNote: "Licensed and supervised by the Financial Services Authority (OJK) under the name PT Asuransi Bina Dana Arta Tbk.",
+                sponsoredBy: "Powered by",
+                consentText: "By purchasing, you confirm that you\u2019ve read and agree to:",
+                consentItem1: "Policy <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://drive.google.com/file/d/1zi4RqlinhTpl6UkgOvjgKGzONTHnBQTb/view?usp=sharing\">Terms &amp; Conditions</a> and the <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://riplay.prodiginow.com/gopaycyberprotection-contextual/en\">Product and Service Information Summary (RIPLAY)</a>",
+                consentItem2: "GoPay\u2019s <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://gopay.co.id/terms-and-condition/gopay-asuransi?lang=en\">Terms &amp; Conditions</a> and <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://gopay.co.id/terms-and-condition/gopay-privacy-notice?lang=en\">Privacy notice</a>"
+            },
+            id: {
+                pageTitle: "Proteksi Penipuan Online",
+                heroTitle: "Proteksi Penipuan Online",
+                heroDesc: "Aman dari banyak modus penipuan online dan, dapatkan perlindungan ekstra saat bertransaksi",
+                planName: "Proteksi penipuan online",
+                planPrice: "Rp200",
+                planBenefit: "Manfaat hingga Rp1 juta untuk 5 hari",
+                planNote: "Otomatis terpasang. Dikenakan biaya per transfer.",
+                includedTitle: "Termasuk dalam asuransi ini",
+                included1: "Perlindungan ke semua transfermu dari penipuan online selama <span class=\"text-slate-900\">5 hari</span>",
+                included2: "Penggantian kerugian hingga <span class=\"text-slate-900\">Rp1.000.000</span> karena transfer tanpa otorisasi, penipuan ritel online, dan/atau pencurian identitas",
+                howToClaimTitle: "Cara klaim",
+                howToClaimIntro: "Untuk mengklaim manfaat asuransi ini, ikuti langkah-langkah berikut dengan metode reimbursement:",
+                step1: "Siapkan dokumen-dokumen yang dibutuhkan.",
+                step2: "Buka halaman <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://polis.prodiginow.com/\" target=\"_blank\" rel=\"noopener noreferrer\">polis.prodiginow.com</a> dan daftar atau log in menggunakan nomor telepon yang terhubung dengan akun GoPay-mu.",
+                step3: "Pilih polis yang ingin kamu klaim, lalu klik \"Klaim\".",
+                step4: "Pilih manfaat yang ingin kamu klaim, selanjutnya kamu akan diarahkan ke halaman pengisian formulir.",
+                step5: "Siapkan semua informasi yang dibutuhkan, termasuk kronologi kejadian, detail akun bank, bukti pembayaran, dan dokumen lain yang mungkin dibutuhkan. Lalu unggah foto dan dokumen tersebut.",
+                step6: "Selesaikan proses pengajuan klaim.",
+                step6note: "Kamu akan mendapatkan reimbusement sesuai dengan ketentuan yang berlaku.",
+                tncTitle: "Syarat dan ketentuan",
+                tnc1: "Kamu hanya dapat memiliki maksimal lima (5) polis asuransi penipuan digital kontekstual yang aktif dalam satu waktu.",
+                tnc2: "Sertifikat polis bisa di-download di <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://polis.prodiginow.com/\" target=\"_blank\" rel=\"noopener noreferrer\">https://polis.prodiginow.com/</a>, menggunakan nomor yang terdaftar di akun GoPay-mu.",
+                tnc3: "Mohon siapkan dokumen yang relevan dan bisa menjelaskan kronologi insiden dengan jelas yang diminta saat pengajuan klaim manfaat.",
+                tnc4: "Dengan mengaktifkan asuransi ini, kamu dianggap memberikan persetujuan kepada GoPay untuk membagikan data pribadimu, termasuk nama, nomor telepon, dan referensi transfer, kepada Pialang Asuransi (Prodigi) semata-mata untuk tujuan pendaftaran asuransi, penerbitan polis, dan pemrosesan klaim.",
+                underwrittenBy: "Penyedia asuransi",
+                ojkNote: "Dilisensikan dan diawasi oleh Otoritas Jasa Keuangan (OJK) atas nama PT Asuransi Bina Dana Arta Tbk.",
+                sponsoredBy: "Didukung oleh",
+                consentText: "Dengan membeli, kamu menyatakan telah membaca dan menyetujui:",
+                consentItem1: "<a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://drive.google.com/file/d/1zi4RqlinhTpl6UkgOvjgKGzONTHnBQTb/view?usp=sharing\">Syarat &amp; Ketentuan</a> Polis dan <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://riplay.prodiginow.com/gopaycyberprotection-contextual\">Ringkasan Informasi Produk dan Layanan</a>",
+                consentItem2: "<a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://gopay.co.id/terms-and-condition/gopay-asuransi\">Syarat &amp; Ketentuan</a> dan <a class=\"font-semibold text-[#00880D] hover:underline\" href=\"https://gopay.co.id/terms-and-condition/gopay-privacy-notice\">Kebijakan Privasi</a> GoPay"
+            }
+        };
+
+        function getLang() {
+            var params = new URLSearchParams(window.location.search);
+            var lang = params.get("lang");
+            return lang === "id" ? "id" : "en";
+        }
+
+        function applyTranslations() {
+            var lang = getLang();
+            var t = translations[lang];
+            document.documentElement.lang = lang;
+            document.querySelectorAll("[data-i18n]").forEach(function (el) {
+                var key = el.getAttribute("data-i18n");
+                if (t[key] !== undefined) {
+                    el.innerHTML = t[key];
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", applyTranslations);
+    </script>
+</head>
+
+<body
+        class="min-h-screen bg-[#F4F7FA] text-gray-800"
+        style="
+      background-image: url('https://al-gp-id-p-cdn-gosure-co-id.oss-ap-southeast-5.aliyuncs.com/insurance-platform/background_grid.png');
+      background-size: cover;
+      background-position: center;
+    "
+>
+<main class="mx-auto min-h-screen max-w-[420px]">
+    <div class="relative" style="font-family: 'Rupa Sans'">
+        <div
+                class="h-[300px] w-full [border-bottom-left-radius:50%_40px] [border-bottom-right-radius:50%_40px]"
+                style="background-color: #0081a0"
+        ></div>
+
+        <div class="-mt-[300px] pb-4">
+            <section class="relative overflow-hidden rounded-1xl">
+                <img
+                        class="h-auto w-full"
+                        src="https://i.gojekapi.com/darkroom/gopay-id/v2/images/public/9a406b35-040e-4641-9d05-194d7c895fc4_screen_damage_protection.png"
+                        alt="Screen damage protection banner"
+                />
+            </section>
+        </div>
+
+        <div>
+            <div class="m-4">
+                <div class="text-center text-white -mt-8">
+                    <h1 class="text-[21px] font-semibold leading-tight" data-i18n="heroTitle">
+                        Online Fraud Protection
+                    </h1>
+                    <p class="mt-2 text-sm text-white/90" data-i18n="heroDesc">
+                        Stay safe from phishing & online fraud, get the coverage you need for every tap and transfer
+                    </p>
+                </div>
+
+                <div class="h-5"></div>
+
+                <div class="mt-1">
+                    <section class="rounded-2xl border border-white/10 bg-white">
+                        <div class="p-4">
+                            <div class="flex items-start gap-3">
+                                <img
+                                        src="https://i.gojekapi.com/darkroom/nearby-cms-id/v2/images/8d2c0f4c-c37c-4b19-ad42-c3dfa9740315_cyber_fraud_protection.png"
+                                        alt="Product icon"
+                                        class="h-10 w-10"
+                                />
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold text-slate-900">
+                                        <span data-i18n="planName">Online fraud protection</span> • <span class="font-semibold text-slate-500" data-i18n="planPrice">Rp200</span>
+                                    </p>
+                                    <p class="mt-1 text-xs font-normal text-slate-500" data-i18n="planBenefit">
+                                        Benefit up to 1 million rupiah for 5 days
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div
+                                    class="mt-3 flex items-center gap-2 text-xs font-normal text-slate-500"
+                            >
+                                <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="12"
+                                        height="12"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                >
+                                    <path
+                                            fill="#424A52"
+                                            fill-rule="evenodd"
+                                            d="M6.796 15.759c1.251 2.01 3.382 3.24 5.681 3.241h.003c3.044 0 5.738-2.16 6.553-5.254a1 1 0 1 1 1.933.51C19.922 18.227 16.431 21 12.48 21h-.005c-3.018-.002-5.806-1.614-7.414-4.246l-.064.772a1.002 1.002 0 0 1-1.08.915 1.001 1.001 0 0 1-.914-1.079l.262-3.165a1.286 1.286 0 0 1 1.501-1.179l.206.055 2.867.92a1 1 0 1 1-.611 1.904l-.432-.138Zm10.409-7.517C15.952 6.23 13.82 5.002 11.522 5h-.002c-3.044 0-5.739 2.16-6.553 5.254a1 1 0 0 1-1.934-.51C4.078 5.773 7.568 3 11.52 3h.004c3.018.002 5.807 1.614 7.415 4.246l.064-.772a1.01 1.01 0 0 1 1.08-.915 1 1 0 0 1 .914 1.079l-.262 3.165c-.03.367-.212.707-.499.93a1.275 1.275 0 0 1-1.002.249l-.206-.055-2.867-.92a1.001 1.001 0 0 1-.647-1.258c.17-.525.734-.812 1.258-.646l.433.139Z"
+                                            clip-rule="evenodd"
+                                    />
+                                </svg>
+                                <span data-i18n="planNote">Automatically applied. Charged per transfer.</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="h-5"></div>
+
+                <div class="rounded-2xl bg-white ring-1 ring-slate-200/70">
+                    <div class="px-4 pt-4">
+                        <h2 class="text-base font-bold text-slate-900" data-i18n="includedTitle">
+                            Included in this insurance
+                        </h2>
+                    </div>
+                    <div class="p-4 pt-3">
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <img
+                                        src="https://i.gojekapi.com/darkroom/nearby-cms-id/v2/images/cc9cb6b0-8752-4746-845a-9542ac2f8f83_protection_time.png"
+                                        alt="Time Protect"
+                                        class="h-10 w-10"
+                                />
+                                <p class="text-sm font-normal text-slate-500" data-i18n="included1">
+                                    <span class="text-slate-900">5 days</span> online fraud protection for all of your transfers
+                                </p>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <img
+                                        src="https://i.gojekapi.com/darkroom/nearby-cms-id/v2/images/81a8b7c6-0565-4d43-b508-1a6c5a1011d7_money_protect.png"
+                                        alt="Money Protect"
+                                        class="h-10 w-10"
+                                />
+                                <p class="text-sm font-normal text-slate-500" data-i18n="included2">
+                                    Compensation for unauthorized fund transfer, online retail fraud, and/or identity theft up to
+                                    <span class="text-slate-900">Rp1.000.000</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-5"></div>
+
+                <div class="mt-4 rounded-2xl bg-white ring-1 ring-slate-200/70">
+                    <header
+                            class="flex items-center justify-between px-4 py-4 cursor-pointer"
+                            data-toggle="how-to-claim-body"
+                            data-btn="how-to-claim-btn"
+                            role="button"
+                            aria-expanded="true"
+                            aria-controls="how-to-claim-body"
+                    >
+                        <h2 class="text-base font-bold text-slate-900" data-i18n="howToClaimTitle">How to claim</h2>
+                        <span
+                                id="how-to-claim-btn"
+                                class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600"
+                                aria-hidden="true"
+                        >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="transform:rotate(90deg)"><path fill="#494A4A" fill-rule="evenodd" d="M10.47 11.526a.667.667 0 1 1-.939.948L5.562 8.546a.766.766 0 0 1-.001-1.09l3.97-3.93a.667.667 0 0 1 .938.948L6.906 8l3.563 3.526Z"/></svg>
+                </span>
+                    </header>
+
+                    <div id="how-to-claim-body" class="pb-4">
+                        <div
+                                class="space-y-0 overflow-hidden rounded-xl bg-slate-50 ring-1 ring-slate-200/70"
+                        >
+                            <div>
+                                <p class="px-4 pt-4 text-sm text-slate-500" data-i18n="howToClaimIntro">To claim this insurance, follow these steps using the reimbursement method:</p>
+                            </div>
+                            <div class="flex items-start gap-3 p-4">
+                                <div
+                                        class="flex h-6 w-6 shrink-0 tabular-nums items-center justify-center rounded-full bg-white text-sm font-bold leading-none text-slate-700 ring-1 ring-slate-200/70"
+                                >
+                                    1
+                                </div>
+                                <p class="text-sm text-slate-500" data-i18n="step1">
+                                    Prepare the required documents.
+                                </p>
+                            </div>
+                            <div class="h-px bg-slate-200/60"></div>
+                            <div class="flex items-start gap-3 p-4">
+                                <div
+                                        class="flex h-6 w-6 shrink-0 tabular-nums items-center justify-center rounded-full bg-white text-sm font-bold leading-none ring-1 ring-slate-200/70"
+                                >
+                                    2
+                                </div>
+                                <p class="text-sm text-slate-500" data-i18n="step2">
+                                    Go to
+                                    <a
+                                            class="font-semibold text-[#00880D] hover:underline"
+                                            href="https://polis.prodiginow.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                    >polis.prodiginow.com</a
+                                    >, then register or log in using the phone number linked to your GoPay account.
+                                </p>
+                            </div>
+                            <div class="h-px bg-slate-200/60"></div>
+                            <div class="flex items-start gap-3 p-4">
+                                <div
+                                        class="flex h-6 w-6 shrink-0 tabular-nums items-center justify-center rounded-full bg-white text-sm font-bold leading-none text-slate-700 ring-1 ring-slate-200/70"
+                                >
+                                    3
+                                </div>
+                                <p class="text-sm text-slate-500" data-i18n="step3">
+                                    Choose the policy you wish to claim and click "Claim".
+                                </p>
+                            </div>
+                            <div class="h-px bg-slate-200/60"></div>
+                            <div class="flex items-start gap-3 p-4">
+                                <div
+                                        class="flex h-6 w-6 shrink-0 tabular-nums items-center justify-center rounded-full bg-white text-sm font-bold leading-none text-slate-700 ring-1 ring-slate-200/70"
+                                >
+                                    4
+                                </div>
+                                <p class="text-sm text-slate-500" data-i18n="step4">
+                                    Select the benefit you want to claim, and you will be redirected to fill a form.
+                                </p>
+                            </div>
+                            <div class="h-px bg-slate-200/60"></div>
+                            <div class="flex items-start gap-3 p-4">
+                                <div
+                                        class="flex h-6 w-6 shrink-0 tabular-nums items-center justify-center rounded-full bg-white text-sm font-bold leading-none text-slate-700 ring-1 ring-slate-200/70"
+                                >
+                                    5
+                                </div>
+                                <div class="text-sm text-slate-500">
+                                    <p data-i18n="step5">Provide all required information, including the chronology of events, your bank account details, proof of payment, and any other necessary documents. Then, upload the required photos or documents.</p>
+                                </div>
+                            </div>
+                            <div class="h-px bg-slate-200/60"></div>
+                            <div class="flex items-start gap-3 p-4">
+                                <div
+                                        class="flex h-6 w-6 shrink-0 tabular-nums items-center justify-center rounded-full bg-white text-sm font-bold leading-none text-slate-700 ring-1 ring-slate-200/70"
+                                >
+                                    6
+                                </div>
+                                <div class="text-sm text-slate-500">
+                                    <p data-i18n="step6">Finish the process by submitting your claim.</p>
+                                    <p class="mt-2 text-sm text-slate-500" data-i18n="step6note">
+                                        You will get reimbursement in accordance with applicable
+                                        terms &amp; policies
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-5"></div>
+                <!--
+                            <div class="mt-4 rounded-2xl bg-white ring-1 ring-slate-200/70">
+                              <header
+                                class="flex items-center justify-between px-4 py-4 cursor-pointer"
+                                data-toggle="exclusions-body"
+                                data-btn="exclusions-btn"
+                                role="button"
+                                aria-expanded="true"
+                                aria-controls="exclusions-body"
+                              >
+                                <h2 class="text-base font-bold text-slate-900">Exclusions</h2>
+                                <span
+                                  id="exclusions-btn"
+                                  class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600"
+                                  aria-hidden="true"
+                                >
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="transform:rotate(90deg)"><path fill="#494A4A" fill-rule="evenodd" d="M10.47 11.526a.667.667 0 1 1-.939.948L5.562 8.546a.766.766 0 0 1-.001-1.09l3.97-3.93a.667.667 0 0 1 .938.948L6.906 8l3.563 3.526Z"/></svg>
+                                </span>
+                              </header>
+                              <div id="exclusions-body" class="px-4 pb-4">
+                                <ol class="list-decimal space-y-3 pl-5 text-sm text-slate-500">
+                                  <li>
+                                    This insurance does not cover losses caused by intentional
+                                    acts or negligence.
+                                  </li>
+                                  <li>
+                                    Claims related to pre-existing fraud incidents prior to
+                                    policy activation are not covered.
+                                  </li>
+                                  <li>
+                                    Losses due to sharing of OTP, PIN, or passwords voluntarily
+                                    are excluded.
+                                  </li>
+                                  <li>
+                                    Transactions made outside of the GoPay platform are not
+                                    eligible for claims.
+                                  </li>
+                                </ol>
+                              </div>
+                            </div>
+
+                            <div class="h-5"></div> -->
+
+                <div class="rounded-2xl bg-white ring-1 ring-slate-200/70">
+                    <header
+                            class="flex items-center justify-between px-4 py-4 cursor-pointer"
+                            data-toggle="tnc-body"
+                            data-btn="tnc-btn"
+                            role="button"
+                            aria-expanded="true"
+                            aria-controls="tnc-body"
+                    >
+                        <h2 class="text-base font-bold text-slate-900" data-i18n="tncTitle">
+                            Terms &amp; Conditions
+                        </h2>
+                        <span
+                                id="tnc-btn"
+                                class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600"
+                                aria-hidden="true"
+                        >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="transform:rotate(90deg)"><path fill="#494A4A" fill-rule="evenodd" d="M10.47 11.526a.667.667 0 1 1-.939.948L5.562 8.546a.766.766 0 0 1-.001-1.09l3.97-3.93a.667.667 0 0 1 .938.948L6.906 8l3.563 3.526Z"/></svg>
+                </span>
+                    </header>
+
+                    <div id="tnc-body" class="px-4 pb-4">
+                        <ol class="list-decimal space-y-3 pl-5 text-sm text-slate-500">
+                            <li data-i18n="tnc1">You may hold up to 2 (two) active digital fraud insurance policies at any given time.</li>
+                            <li data-i18n="tnc2">Each incident may only be claimed under 1 (one) insurance policy. You are not permitted to submit multiple claims for the same incident across more than one policy.</li>
+                            <li data-i18n="tnc3">
+                                Policy certificate will be sent to your email or can be downloaded from
+                                <a
+                                        class="font-semibold text-[#00880D] hover:underline"
+                                        href="https://polis.prodiginow.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                >https://polis.prodiginow.com/</a>, with your registered number on GoPay.
+                            </li>
+                            <li data-i18n="tnc4">Please provide relevant and appropriate documents requested by the insurer in relation to claim settlement.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- <div class="mt-4 rounded-2xl bg-white ring-1 ring-slate-200/70">
+                  <header
+                    class="flex items-center justify-between px-4 py-4 cursor-pointer"
+                    data-toggle="faq-body"
+                    data-btn="faq-btn"
+                    role="button"
+                    aria-expanded="true"
+                    aria-controls="faq-body"
+                  >
+                    <h2 class="text-base font-bold text-slate-900">
+                      Frequently asked questions
+                    </h2>
+                    <span
+                      id="faq-btn"
+                      class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600"
+                      aria-hidden="true"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="transform:rotate(90deg)"><path fill="#494A4A" fill-rule="evenodd" d="M10.47 11.526a.667.667 0 1 1-.939.948L5.562 8.546a.766.766 0 0 1-.001-1.09l3.97-3.93a.667.667 0 0 1 .938.948L6.906 8l3.563 3.526Z"/></svg>
+                    </span>
+                  </header>
+
+                  <div id="faq-body" class="px-4 pb-4">
+                    <div class="space-y-4">
+                      <div class="flex gap-3">
+                        <div
+                          class="flex h-5 w-6 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700"
+                        >
+                          1
+                        </div>
+                        <div>
+                          <p class="text-sm font-semibold text-slate-900">
+                            What is insurance?
+                          </p>
+                          <p class="mt-2 text-sm text-slate-500">
+                            Insurance is a financial product that provides
+                            protection against specific risks in exchange for
+                            premium payments. It helps individuals or businesses
+                            mitigate financial losses resulting from unforeseen
+                            events such as accidents, illnesses, natural disasters,
+                            or death.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-3">
+                        <div
+                          class="flex h-5 w-6 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700"
+                        >
+                          2
+                        </div>
+                        <div>
+                          <p class="text-sm font-semibold text-slate-900">
+                            What types of insurance products are available?
+                          </p>
+                          <p class="mt-2 text-sm text-slate-500">
+                            Insurance products vary widely and can include health
+                            insurance, life insurance, auto insurance, home
+                            insurance, renters insurance, business insurance, travel
+                            insurance, and more. Each type of insurance caters to
+                            different needs and risks.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div class="flex gap-3">
+                        <div
+                          class="flex h-5 w-6 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700"
+                        >
+                          3
+                        </div>
+                        <div>
+                          <p class="text-sm font-semibold text-slate-900">
+                            Why do I need insurance?
+                          </p>
+                          <p class="mt-2 text-sm text-slate-500">
+                            Insurance offers financial security and peace of mind by
+                            providing coverage for unexpected expenses or losses. It
+                            helps individuals and businesses manage risks and avoid
+                            significant financial burdens in times of crisis.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+            </div>
+
+            <div class="m-5">
+                <section
+                        class="mt-8 rounded-2xl bg-white px-4 py-6 text-center text-xs text-slate-500 ring-1 ring-slate-200/70"
+                >
+                    <p data-i18n="underwrittenBy">Underwritten by</p>
+                    <img
+                            class="mt-2 mx-auto h-6 w-auto"
+                            src="https://i.gojekapi.com/darkroom/gopay-id/v2/images/public/6320daed-73de-430f-aea5-72d66eea2ff8_OonaInsuranceLogo.png"
+                            alt="oona logo"
+                    />
+                    <p class="mt-2" data-i18n="ojkNote">
+                        Licensed and supervised by the Financial Services Authority
+                        (OJK) under the name PT Asuransi Bina Dana Arta Tbk.
+                    </p>
+                    <div class="mt-4 border-t border-dashed border-slate-200"></div>
+                    <p class="mt-4" data-i18n="sponsoredBy">Sponsored by</p>
+                    <div class="pb-4">
+                        <img
+                                class="mt-2 mx-auto h-5 w-auto"
+                                src="https://i.gojekapi.com/darkroom/gopay-id/v2/images/public/be320808-9310-450a-bb5b-7c8e2667e0de_ProdigiIcon.png"
+                                alt="Insurance provider logo"
+                        />
+                    </div>
+                    <div class="border-t border-dashed border-slate-200"></div>
+                    <div class="mt-4 text-left">
+                        <p class="text-slate-500" data-i18n="consentText">By purchasing, you confirm that you&#8217;ve read and agree to:</p>
+                        <ul class="mt-2 space-y-1.5 list-disc pl-4 text-slate-500">
+                            <li data-i18n="consentItem1">Policy <a class="font-semibold text-[#00880D] hover:underline" href="#">Terms &amp; Conditions</a> and the <a class="font-semibold text-[#00880D] hover:underline" href="#">Product and Service Information Summary</a></li>
+                            <li data-i18n="consentItem2">GoPay&#8217;s <a class="font-semibold text-[#00880D] hover:underline" href="#">Terms &amp; Conditions</a> and <a class="font-semibold text-[#00880D] hover:underline" href="#">Privacy notice</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll("[data-toggle]").forEach(function (header) {
+            header.addEventListener("click", function () {
+                var bodyId = header.getAttribute("data-toggle");
+                var btnId = header.getAttribute("data-btn");
+                var body = document.getElementById(bodyId);
+                var btn = document.getElementById(btnId);
+
+                if (!body || !btn) return;
+
+                var isOpen = header.getAttribute("aria-expanded") === "true";
+
+                var svgDown = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="transform:rotate(90deg)"><path fill="#494A4A" fill-rule="evenodd" d="M10.47 11.526a.667.667 0 1 1-.939.948L5.562 8.546a.766.766 0 0 1-.001-1.09l3.97-3.93a.667.667 0 0 1 .938.948L6.906 8l3.563 3.526Z"/></svg>';
+                var svgUp = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" style="transform:rotate(-90deg)"><path fill="#494A4A" fill-rule="evenodd" d="M10.47 11.526a.667.667 0 1 1-.939.948L5.562 8.546a.766.766 0 0 1-.001-1.09l3.97-3.93a.667.667 0 0 1 .938.948L6.906 8l3.563 3.526Z"/></svg>';
+                if (isOpen) {
+                    body.style.display = "none";
+                    btn.innerHTML = svgUp;
+                    header.setAttribute("aria-expanded", "false");
+                } else {
+                    body.style.display = "block";
+                    btn.innerHTML = svgDown;
+                    header.setAttribute("aria-expanded", "true");
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
